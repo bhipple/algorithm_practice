@@ -1,3 +1,6 @@
+/** 
+ *  Remove duplicates from a Linked List.
+**/
 import java.util.HashSet;
 
 public class RemoveLinkedListDuplicates {
