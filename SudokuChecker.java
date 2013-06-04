@@ -1,3 +1,10 @@
+/** 
+ * Check to see if a Sudoku int[][] is valid
+ * 
+ * Assumption: puzzle is 9x9 and contains only numbers from 1-9
+ * 
+**/
+
 public class SudokuChecker {
 	
 	public static boolean isValid(int[][] sudoku) {
