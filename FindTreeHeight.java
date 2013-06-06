@@ -1,3 +1,7 @@
+/** 
+ ** Find the depth of an n-ary tree
+**/
+
 public class FindTreeHeight {
 	
 	public static int findDepth(TreeNode head) {
