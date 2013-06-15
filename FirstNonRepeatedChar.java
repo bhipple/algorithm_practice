@@ -1,4 +1,3 @@
-package amazon;
 import java.util.*;
 /**
  * Find the first non-repeated character in a string.
@@ -9,17 +8,7 @@ import java.util.*;
  *
  */
 
-public class FirstNonRepeatedChar {
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		String str = "abfbfbbcdgda";
-		
-		System.out.println(firstUnique(str));
-	}
-	
+public class FirstNonRepeatedChar {	
 	// Assuming by "repeated" we mean two of them adjacent to each other
 	// Runtime: O(n)
 	// Additional Space: O(1)
