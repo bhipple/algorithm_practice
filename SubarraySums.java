@@ -12,14 +12,14 @@ public class SubarraySums {
 		for(int i=0; i<k; i++)
 			tempSum += arr[i];
       
-    if(tempSum == sum)
+    		if(tempSum == sum)
 			res++;
 		
 		for(int j=k; j<arr.length; j++) {
 			tempSum += arr[j];
 			tempSum -= arr[j-k];
       
-      if(tempSum == sum) 
+      			if(tempSum == sum) 
 				res++;
 		}
 		
