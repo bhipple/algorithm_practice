@@ -10,8 +10,7 @@ struct Node {
 
 int children(Node* head) {
     if(!head) return 0;
-    head->data = 1 + children(head->left) + children(head->right);
-    return head->data;
+    return head->data = 1 + children(head->left) + children(head->right);
 }
 
 
