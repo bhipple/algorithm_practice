@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// @assumption: b >= 0, p >= 1
+// @assumption: p >= 1
 int exponent(int b, int p) {
+    if(p < 1) return -1; // ERROR
     if(b == 0) return 0;
     if(p == 0) return 1;
 
