@@ -16,11 +16,13 @@ int exponent(int b, int p) {
 
 int main() {
     int b, p;
-    printf("Enter a base: \n");
-    scanf("%d", &b);
+    while(1) {
+        printf("Enter a base: \n");
+        scanf("%d", &b);
 
-    printf("Enter an exponent: \n");
-    scanf("%d", &p);
+        printf("Enter an exponent: \n");
+        scanf("%d", &p);
 
-    printf("Result: %d\n", exponent(b, p));
+        printf("Result: %d\n\n\n", exponent(b, p));
+    }
 }
