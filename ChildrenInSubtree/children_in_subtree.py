@@ -7,6 +7,11 @@ def childCount(head):
         return 0
     return 1 + childCount(head.left) + childCount(head.right)
 
+
+
+## ============================================================================
+##                                  Testing
+## ============================================================================
 A = Node()
 B = Node()
 C = Node()
