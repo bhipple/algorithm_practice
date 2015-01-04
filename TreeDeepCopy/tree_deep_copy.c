@@ -19,6 +19,10 @@ struct node* deepcopy(struct node* head) {
     return cpy;
 }
 
+
+// ============================================================================
+//                                  Testing
+// ============================================================================
 void printInOrder(struct node* head) {
     if(!head) return;
     printInOrder(head->left);
@@ -33,8 +37,6 @@ void incTree(struct node* head) {
     incTree(head->right);
 }
 
-
-// Tester
 int main() {
     struct node A, B, C, D, E;
     A.data = 128;
