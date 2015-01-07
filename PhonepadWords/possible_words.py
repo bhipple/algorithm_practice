@@ -1,4 +1,7 @@
 #!/usr/bin/python
+import enchant
+
+d = enchant.Dict("en_US")
 
 keyToLetters = [
     ['a', 'b', 'c'],
@@ -40,15 +43,16 @@ def printPath(head, sofar):
     if head == None:
         return
     if head.children == None or not len(head.children):
-        print sofar + head.letter
+        if d.check(sofar + head.letter):
+            print sofar + head.letter
         return
 
     for child in head.children:
         printPath(child, sofar + head.letter)
 
 
-#x = input("Enter a phonepad sequence: ")
-x = 259;
+
+x = input("Enter a phonepad sequence: ")
 
 head = Node(' ')
 phoneWords(head, str(x))
