@@ -1,4 +1,4 @@
-// O(2^(L-2)) runtime, where L is the depth of the DAG
+# O(2^(L-2)) runtime, where L is the depth of the DAG
 def dfs(i, rowNum):
 	if rowNum >= len(rows):
 		return 0
