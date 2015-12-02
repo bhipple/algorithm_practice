@@ -1,8 +1,5 @@
 -- Given two integers m and l, how many common
 -- divisors do they have?
-
-commonDivs :: Int -> Int -> Int -> [Int]
-commonDivs m l x
-    | (x > m) or (x > l) = []
-    | mod m x == 0, mod l x == 0 = x : commonDivs m l (x+1)
-    | otherwise = commonDivs m l (x+1)
+commonDivs :: Int -> Int -> [Int]
+commonDivs m l = [x | x <- [1..n], m `rem` x == 0, l `rem` x == 0]
+    where n = max m l
