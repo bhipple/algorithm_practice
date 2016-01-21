@@ -10,7 +10,12 @@ class TreeNode:
 def inRange(head, x, y):
     if not head:
         return []
-    return []
+    if head.val < x:
+        return inRange(head.right, x, y)
+    if head.val > y:
+        return inRange(head.left, x, y)
+
+    return inRange(head.left, x, y) + [head.val] + inRange(head.right, x, y)
 
 class TestClass(unittest.TestCase):
     def setUp(self):
@@ -26,8 +31,12 @@ class TestClass(unittest.TestCase):
         self.b.right = self.d
         self.d.left = self.e
 
-    def test_a(self):
+    def test_sol(self):
         self.assertEqual([], inRange(self.a, 33, 35))
         self.assertEqual([8,9], inRange(self.a, 0, 11))
+        self.assertEqual([8,9], inRange(self.a, 0, 9))
+        self.assertEqual([12,16], inRange(self.a, 12, 21))
+        self.assertEqual([12,16,32], inRange(self.a, 12, 32))
+        self.assertEqual([8,9,12,16,32], inRange(self.a, 0, 99))
 
 unittest.main()
