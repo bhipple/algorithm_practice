@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # Given a sorted linked list, convert it to a balanced binary search tree
 import unittest
+global lstHead
 
 class ListNode:
     def __init__(self, val):
@@ -17,12 +18,42 @@ def printList(head):
         print head.val
         printList(head.next)
 
-def printTree(head):
+def preOrder(head):
     if not head:
         return
-    printTree(head.left)
     print head.val
-    printTree(head.right)
+    preOrder(head.left)
+    preOrder(head.right)
+
+def length(head):
+    if not head:
+        return 0
+    return 1 + length(head.next)
+
+# Wrapper to setup global and n
+def solution(head):
+    global lstHead
+    lstHead = head
+    return buildBst(length(lstHead))
+
+def buildBst(n):
+    global lstHead
+    if n <= 0:
+        return None
+
+    # Left Subtree
+    left = buildBst(n/2)
+
+    # This subtree's root node
+    root = TreeNode(lstHead.val)
+    root.left = left
+    #print "Added root %s" % root.val
+    lstHead = lstHead.next
+
+    # Right subtree
+    root.right = buildBst(n - n/2 - 1)
+
+    return root
 
 class TestClass(unittest.TestCase):
     def setUp(self):
@@ -38,7 +69,14 @@ class TestClass(unittest.TestCase):
         self.d.next = self.e
         self.e.next = self.f
 
-    def test_ex(self):
+    def test_solution(self):
+        print "Starting list: "
         printList(self.a)
+
+        print "Final Tree pre-order traversal:"
+        preOrder(solution(self.a))
+
+    def test_len(self):
+        self.assertEqual(6, length(self.a))
 
 unittest.main()
