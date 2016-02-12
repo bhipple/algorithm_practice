@@ -17,19 +17,17 @@ def maxSubarray(arr):
     best = 0
     bestStart = 0
     bestEnd = 0
+    curStart = 0
     curVal = 0
-    rurStart = 0
-    curEnd = 0
     for i in range(len(arr)):
         curVal += arr[i]
         if curVal < 0:
             curVal = 0
             curStart = i+1
-        curEnd = i
         if curVal > best:
             best = curVal
             bestStart = curStart
-            bestEnd = curEnd
+            bestEnd = i
 
     return arr[bestStart:bestEnd+1]
 

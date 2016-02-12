@@ -1,4 +1,4 @@
+*.pyc
 *.txt
 .ycm_extra_conf.pyc
 a.out
-
