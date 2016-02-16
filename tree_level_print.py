@@ -12,14 +12,7 @@ def getLevel(head, level):
         return []
     if level == 1:
         return [head.val]
-    return reduce(lambda acc, c: acc + getLevel(c, level-1),
-                  head.children, [])
-
-    # The above could also be written as:
-    # res = []
-    # for c in head.children:
-    #    res += getLevel(c, level - 1)
-    # return res
+    return reduce(lambda acc, c: acc + getLevel(c, level-1), head.children, [])
 
 '''
             a
