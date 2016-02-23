@@ -2,6 +2,15 @@
 # Given two lists that converge at some point, find their common ancestor
 import unittest
 
+'''
+  A0
+   A1    B0
+    A2  B1
+      C1
+      C2
+      ...
+'''
+
 class Node:
     def __init__(self, val, nxt = None):
         self.val = val
