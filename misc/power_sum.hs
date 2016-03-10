@@ -10,9 +10,9 @@ powerct :: Int -> Int -> Int
 powerct x n = length ways
     where
         powers = [k^n | k <- [1..]]
-        pows = takeWhile (\k -> k <= x) powers
+        pows = takeWhile (<= x) powers
         pset = powerset pows x
-        ways = filter (\s -> (sum s == x)) pset
+        ways = filter (\s -> sum s == x) pset
 
 main :: IO ()
 main = do

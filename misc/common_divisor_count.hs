@@ -34,5 +34,4 @@ commonCnt m l = length divisors
         pset = powerset commonFacts
         divisors = nub $ map product pset
 
-main = do
-        print . show $ commonCnt 100000000 100000000
+main = print . show $ commonCnt 100000000 100000000

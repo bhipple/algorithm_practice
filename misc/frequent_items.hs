@@ -14,7 +14,7 @@ freqHash lst k = Set.fromAscList freqItems
 freq :: Set.Set Int -> [Int] -> [Int]
 freq freqHash [] = []
 freq freqHash (x:xs)
-    | Set.member x freqHash = (x : freq freqHash xs)
+    | Set.member x freqHash = x : freq freqHash xs
     | otherwise = freq freqHash xs
 
 process :: Int -> [Int] -> [Int]
