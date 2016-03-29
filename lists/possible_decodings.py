@@ -22,8 +22,8 @@ def eaterWithResults(s):
 
     res = map(lambda x: s[0] + x, eaterWithResults(s[1:]))
     if int(s[0:2]) <= 25:
-        return set(res + map(lambda x: "'" + s[0:2] + "'" + x, eaterWithResults(s[2:])))
-    return set(res)
+        return res + map(lambda x: "'" + s[0:2] + "'" + x, eaterWithResults(s[2:]))
+    return res
 
 ## ============================================================================
 ## Tests
