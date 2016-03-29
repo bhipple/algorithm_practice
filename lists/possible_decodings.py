@@ -54,5 +54,10 @@ class Test(unittest.TestCase):
         self.assertEqual(2, eater(t))
         self.assertEqual(len(eaterWithResults(t)), eater(t))
 
+    def test_6(self):
+        t = "1234"
+        self.assertEqual(3, eater(t))
+        self.assertEqual(len(eaterWithResults(t)), eater(t))
+
 if __name__ == "__main__":
     unittest.main()
