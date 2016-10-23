@@ -1,4 +1,8 @@
+*.hi
+*.hs
+*.o
 *.pyc
 *.txt
+.hs-tags
 .ycm_extra_conf.pyc
 a.out
